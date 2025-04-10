@@ -58,11 +58,13 @@ function App() {
   return (
     <>
 
+
         <div className='h-lvh flex justify-center items-center'>
 
             <div className=' w-3xl m-auto shadow rounded shadow-slate-600 p-3'>
+              <h1 className='font-bold text-center p-3 text-3xl'>Currency count</h1>
 
-              <div className='shadow rounded-3xl shadow-purple-400 p-9 m-2 flex justify-between'>
+              <div className='shadow rounded-3xl shadow-teal-900 p-9 m-2 flex justify-between'>
 
                 <label htmlFor="" className='font-bold'>From</label>
                 
@@ -74,7 +76,7 @@ function App() {
                   <button onClick={swap} className='bg-teal-950 text-white font-bold px-3 py-1 shadow rounded'>swap</button>
               </div>
 
-              <div className='shadow rounded-3xl shadow-purple-400  p-10 m-2 flex justify-between'>
+              <div className='shadow rounded-3xl shadow-teal-900 p-10 m-2 flex justify-between'>
 
                 <label htmlFor="" className='font-bold'>To</label>
                 <Input place={to} changeAmount={changeAmountTo} amount={amountTo}/> 
