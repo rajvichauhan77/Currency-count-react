@@ -11,8 +11,8 @@ const fetchApi  = (from, to) => {
             .then((res) => {
                 console.log(res[from])
                 setData(res[from])
-            }, [from, to])
-    })
+            })
+    }, [from , to])
 
 
     return data
