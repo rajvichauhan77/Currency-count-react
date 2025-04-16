@@ -17,5 +17,5 @@ const fetchApi  = (from, to) => {
 
     return data
 }
-
+      
 export default fetchApi 

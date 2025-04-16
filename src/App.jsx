@@ -11,7 +11,7 @@ function App() {
   const [amountFrom, setAmountFrom]  = useState(0)
   const [amountTo, setAmountTo]  = useState(0)
 
-  const [obj, setObj] = useState({username: "red" , num: "1234"})
+  // const [obj, setObj] = useState({username: "red" , num: "1234"})
 
   const data = fetchApi(from,to)
 
@@ -26,28 +26,34 @@ function App() {
    function changeAmountFrom(e){
     let val  = e.target.value
 
-    setObj((prev) =>({...prev, num : e}))
+    // setObj((prev) =>({...prev, num : e}))
     console.log(val)
-    // setAmountFrom(val)
+    setAmountFrom(val)
 
     setAmountTo(data[to] *val)
    }
+
 
    const changeAmountTo = (e) => {
     let val  = e.target.value
 
     setAmountTo(val)
     console.log(val/ data[to])
-    setAmountFrom(val / data[to])
+    // setAmountFrom(val / data[to])
 
     // console.log(data [from])
    }
 
-   useEffect (() =>{
-    setAmountTo(data[to] * amountFrom)
-    setAmountFrom(data[from] * amountTo)
-   }, [from, to, data])
 
+      useEffect (() =>{
+        setAmountTo(data[to] * amountFrom)
+
+        // setAmountFrom(data[from] * amountFrom)
+        
+      }, [from, to, data])
+
+
+   
    function swap(){
       let sw = from
       setFrom(to)
@@ -66,7 +72,7 @@ function App() {
 
               <div className='shadow rounded-3xl shadow-teal-900 p-9 m-2 flex justify-between'>
 
-                <label htmlFor="" className='font-bold'>From</label>
+                <label htmlFor="" className='font-bold'>From {from.toLocaleUpperCase() }</label>
                 
                 <Input place={from} changeAmount={changeAmountFrom} amount={amountFrom}/>
                 <SelectCurrency selectCur={selectCurFrom} data={data} curCur={from}/>
